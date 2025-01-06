@@ -1,18 +1,50 @@
 <?php
-session_start();
-require_once '../view/login.php';
-if (!isset($_SESSION['user_email'])) {
-    header("Location: report.php");
-    exit();
-}
+    session_start();
+    if (!isset($_SESSION['status'])) {
+        header('location: login.php');
+        exit();
+    }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BondhuShobha - Report System</title>
-   
+    <title>BondhuShobha - Report </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f5f5f5;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #3b5998;
+            color: white;
+        }
+
+        .main {
+            display: flex;
+            height: calc(100vh - 60px);
+        }
+        .sidebar {
+            width: 20%;
+            padding: 10px;
+            background-color: #d9e3f0;
+        }
+
+        .content {
+            width: 80%;
+            padding: 20px;
+        }
+
+    </style>
 </head>
 <body>
     <div class="header">

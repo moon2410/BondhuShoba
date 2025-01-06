@@ -11,7 +11,7 @@
             header("location: ../view/userfeed.php");
         }
         else{
-            echo "Login failed";
+            echo "Login Error";
         }
     }
 ?>
